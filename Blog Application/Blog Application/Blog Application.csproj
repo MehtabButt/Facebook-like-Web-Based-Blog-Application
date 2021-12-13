@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Blog_Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="System\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="wwwroot\images\house-fill.svg" />
+    <None Include="wwwroot\images\house.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,61 @@
+﻿@model List<Blog_Application.Models.User>
+
+@{ 
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="row justify-content-center mt-3">
+
+        <div class="col">
+
+            <div class="ml-2 mb-2 font-weight-bold">
+                <a asp-controller="Admin" asp-action="AddUser">
+                    <img src="~/images/person-plus.svg" alt="Add User" width="40" height="40" />
+                    <img src="~/images/person-plus-fill.svg" alt="Add User" width="40" height="40" />
+                    Add User
+                </a>
+            </div>
+            
+            <table class="table" style="width:100%;color:white;">
+                <caption>List of users</caption>
+                <thead class="table-dark">
+                    <tr>
+                        <td>Profile Pic</td>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>Username</td>
+                        <td>Email</td>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        @foreach (Blog_Application.Models.User user in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="@Url.Content(user.ProfilePicSrc)" alt="Profile Pic" style="border-radius:50%;display:inline-block;" width="40" height="40" />
+                                </td>
+                                <td>@user.FirstName</td>
+                                <td>@user.LastName</td>
+                                <td>@user.Username</td>
+                                <td>@user.Email</td>
+                                <td class="text-nowrap">
+                                    <a class="btn btn-info"  asp-action="Update" asp-route-Username="@user.Username">Update</a>
+                                    <a class="btn btn-danger ml-2" asp-action="Delete" asp-route-Username="@user.Username">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+

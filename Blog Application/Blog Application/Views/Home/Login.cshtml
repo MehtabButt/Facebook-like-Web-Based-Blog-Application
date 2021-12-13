@@ -1,0 +1,59 @@
+﻿@using Blog_Application.Models
+@model UserCredentials
+
+<html>
+
+<head>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/css/site.css" rel="stylesheet" />
+
+</head>
+
+<body style="background:#f2f7f3">
+
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-around">
+
+            <div class="col-sm-6">
+                <div>
+                    <h1 style="font-size:40px; font-family: fantasy;color: #0777e0">Blog App</h1>
+                    <p style="font-size:30px; font-family:Arial;">Blogging helps you to connect and share with the people.</p>
+                </div>
+            </div>
+
+            <div  class="col-sm-4 border border-1 border-primary rounded-lg bg-white shadow ">
+                
+                <form action="/Home/Login" method="post">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="mb-2">
+                        <label class="form-label"></label>
+                        <input asp-for="Username" class="form-control form-control-lg"  placeholder="Username">
+                        <span asp-validation-for="Username"></span>
+                    </div>
+                    
+                    <div class="mb-2">
+                        <label class="form-label"></label>
+                        <input type="password" asp-for="Password" class="form-control form-control-lg" placeholder="Password">
+                       <span asp-validation-for="Password"></span>
+                    </div>
+                    
+
+
+                    <input type="submit" class="btn btn-primary btn-lg font-weight-bold" style="width:100%;" value="Log In">
+                    
+                </form>
+                <div style="border-top:1px solid #b3c9b9; width:100%;margin-top:25px;text-align:center;">
+                    <a type="button" asp-action="SignUp" class="btn btn-success btn-lg mx-auto mb-3 mt-4">Create New Acount</a>
+                  
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

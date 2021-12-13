@@ -1,0 +1,78 @@
+﻿@using Blog_Application.Models
+@model SignUpUser
+
+<html>
+
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    
+</head>
+<body style="background:#f2f7f3;">
+
+    <div class="container-fluid">
+
+
+        <div class="row mt-5 justify-content-center ">
+
+
+            <div class="col-sm-auto">
+
+                <p class="text-center font-weight-bold" style="font-size:35px;white-space:nowrap;">Add User</p>
+
+                <form method="post" action="/Admin/AddUser">
+                    <div asp-validation-summary="ModelOnly" class="text-warning"></div>
+                    <div class="row">
+                        <div class="col">
+                            <label asp-for="FirstName"></label>
+                            <input asp-for="FirstName" class="form-control" />
+                            <span asp-validation-for="FirstName"></span>
+                        </div>
+                        <div class="col">
+                            <label asp-for="LastName"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName"></span>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <label asp-for="Username"></label>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="Password"></label>
+                        <input type="password" asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="PasswordConfirm"></label>
+                        <input type="password" asp-for="PasswordConfirm" class="form-control" />
+                        <span asp-validation-for="PasswordConfirm"></span>
+                    </div>
+
+
+                    <input type="submit" class="btn btn-success mt-3" style="width:200px;font-weight:bold;font-size:20px;" value="Add" />
+
+
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+</html>

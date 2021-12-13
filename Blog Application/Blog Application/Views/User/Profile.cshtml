@@ -1,0 +1,84 @@
+﻿@model Blog_Application.Models.SignInUser
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        
+
+        @if (Model != null)
+        {
+            <div class="col-5 text-white" style="min-width:400px;">
+
+                <div class="text-center">
+                    <img src="@Url.Content(@Model.ProfilePicSrc)" asp-append-version="true" alt="Profile Pic" style="border-radius:50%;" width="100" height="100" />
+
+                </div>
+
+
+                <form method="post" asp-action="Profile" enctype="multipart/form-data">
+
+                    <div asp-validation-summary="ModelOnly" class="text-white"></div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <label asp-for="FirstName"></label>
+                            <input asp-for="FirstName" class="form-control" />
+                            <span asp-validation-for="FirstName"></span>
+                        </div>
+                        <div class="col">
+                            <label asp-for="LastName"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName"></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-2">
+                        <label asp-for="Username"></label>
+                        <input asp-for="Username" class="form-control" readonly/>
+                        <span asp-validation-for="Username"></span>
+                    </div>
+
+                    <div class="mt-2">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email"></span>
+                    </div>
+
+                    <div class="mt-2">
+                        <label asp-for="ProfilePic" class="form-label"></label>
+                        <input class="form-control" asp-for="ProfilePic" accept="image/*">
+                    </div>
+
+                    <div class="mt-2">
+                        <label asp-for="OldPassword"></label>
+                        <input type="password" asp-for="OldPassword" class="form-control" />
+                        <span asp-validation-for="OldPassword"></span>
+                    </div>
+
+                    <div class="mt-2">
+                        <label asp-for="NewPassword"></label>
+                        <input type="password" asp-for="NewPassword " class="form-control" />
+                        <span asp-validation-for="NewPassword"></span>
+                    </div>
+
+                    <input type="submit" class="btn btn-outline-success mt-3" style="width:200px;font-weight:bold;font-size:20px;" value="Update" />
+
+                    
+
+
+
+                </form>
+
+
+
+
+
+
+            </div>
+        }
+
+    </div>
+</div>

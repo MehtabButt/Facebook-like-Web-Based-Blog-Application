@@ -1,0 +1,84 @@
+﻿<html>
+<head>
+
+
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+    <style>
+        a img:last-child {
+            display: none;
+        }
+
+        a:hover img:last-child {
+            display: inline-block;
+        }
+
+        a:hover img:first-child {
+            display: none;
+        }
+    </style>
+</head>
+<body style="background-color:#18191a;">
+
+    @* Header *@
+
+    <div class="container-fluid h-auto" style="background-color:#242526;">
+        <div class="row align-items-center">
+
+
+
+            <div class="col-4 text-nowrap">
+
+                <div style="font-size: 30px;color:white;" class="ml-3">
+
+                    <span style=" border: 1px solid #2d88ff; border-radius: 50%; border-width: 0px 8px; background-color: #2d88ff; font-family: 'Hoefler Text'; font-weight: bold;font-size:33px;">B</span>
+                    <span style="font-family: fantasy; ">log App</span>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-4 text-nowrap text-center">
+
+                <div class="row">
+                    <div class="col-6">
+                        <a asp-controller="User" asp-action="Home">
+                            <img src="~/images/house.svg" alt="Home" width="32" height="32" />
+                            <img src="~/images/house-fill.svg" alt="Home" width="32" height="32" />
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a asp-controller="User" asp-action="Profile">
+                            <img src="~/images/person.svg" alt="Home" width="32" height="32" />
+                            <img src="~/images/person-fill.svg" alt="Home" width="32" height="32" />
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-4 text-nowrap">
+                <span style="font-size:35px;float:right;">
+                    <a asp-controller="Home" asp-action="LogOut">
+                        <img src="~/images/box-arrow-in-left.svg" alt="Home" width="32" height="32" />
+                        <img src="~/images/box-arrow-left.svg" alt="Home" width="32" height="32" />
+                    </a>
+                </span>
+            </div>
+
+
+
+
+        </div>
+    </div>s
+
+
+    @* ----------------------- *@
+    <div>
+        @RenderBody()
+    </div>
+   
+</body>
+</html>
